@@ -1,0 +1,8 @@
+services:
+    demo.behat.context.setup.api:
+            class: Demo\Behat\Context\Setup\ApiContext
+            arguments:
+                - "@__symfony__.lexik_jwt_authentication.jwt_manager"
+                - "@demo.behat.service.shared_storage"
+            tags:
+                - { name: "fob.context_service" }

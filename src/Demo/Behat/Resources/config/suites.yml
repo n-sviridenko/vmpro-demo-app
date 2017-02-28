@@ -1,0 +1,2 @@
+imports:
+    - suites/api/demo.yml

@@ -1,0 +1,5 @@
+---
+
+- hosts: app
+  roles:
+    - { role: app, become_user: app }

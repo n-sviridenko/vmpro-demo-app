@@ -1,0 +1,5 @@
+services:
+    demo.api.normalizer.video:
+        class: Demo\Bundle\ApiBundle\Normalizer\VideoNormalizer
+        tags:
+            - { name: serializer.normalizer }

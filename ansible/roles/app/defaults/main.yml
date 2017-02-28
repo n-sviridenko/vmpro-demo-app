@@ -1,0 +1,4 @@
+---
+
+version_dir: /srv/app
+db_reset:    true

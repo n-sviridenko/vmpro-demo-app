@@ -1,0 +1,30 @@
+[mysqld]
+thread_cache_size       = 128
+sort_buffer_size        = 4M
+bulk_insert_buffer_size = 16M
+tmp_table_size          = 32M
+max_heap_table_size     = 32M
+query_cache_limit		= 128K
+query_cache_size		= 64M
+
+log-error   = /var/log/mysql/error.log
+
+# Recommended in standard MySQL setup
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+# Cache only tiny result sets, so we can fit more in the query cache.
+
+# InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.
+# Read the manual for more InnoDB related options. There are many!
+default_storage_engine	 = InnoDB
+innodb_buffer_pool_size  = 512M
+innodb_log_file_size     = 512M
+innodb_log_buffer_size   = 8M
+innodb_file_per_table    = 1
+max_allowed_packet       = 1G
+
+character-set-server = utf8
+collation-server     = utf8_unicode_ci
+
+[isamchk]
+key_buffer		= 16M

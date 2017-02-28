@@ -1,0 +1,83 @@
+---
+
+app_options:
+  php_version:     '7.1'
+  nodejs_version:  '7'
+  mariadb:         true
+  mariadb_version: '10.1'
+  redis:           true
+  docker:          false
+  phppgadmin:      false
+  mongo_express:   false
+  heka:            false
+  java:            true
+
+app_patterns:
+
+  ############
+  # Timezone #
+  ############
+
+  timezone_default: Etc/UTC
+
+  ###############
+  # Environment #
+  ###############
+
+  environment_variables:
+    - SYMFONY_ENV:           "{{ app.env }}"
+    - VAGRANT:               1
+
+  #######
+  # Php #
+  #######
+
+  php_extensions:
+    # Symfony
+    - intl
+    - curl
+    - apcu
+    - apcu-bc
+    - mcrypt
+    - mysql
+    - mbstring
+    - xml
+    # composer
+    - zip
+    # app
+    - gd
+
+  php_configs:
+    - file: app_opcache.ini
+      template: configs/app_opcache.{{ env }}.j2
+    - file: app.ini
+      template: configs/app.{{ env }}.j2
+      config:
+        - date.timezone: UTC
+
+  php_cli_configs:
+    - file: app_cli.ini
+      config:
+        - memory_limit: 2048M
+
+  #########
+  # Nginx #
+  #########
+
+  nginx_configs:
+    # Php fpm
+    - file:     app_php_fpm
+      template: configs/app_php_fpm.{{ env }}.j2
+    # Gzip
+    - file:     app_gzip
+      template: configs/app_gzip.{{ env }}.j2
+
+  #########
+  # Mysql #
+  #########
+
+  mysql_configs:
+    - file: app.cnf
+      template: "{{ playbook_dir ~ '/roles/app/templates/my.cnf.j2' }}"
+
+  motd_template: template/yoda.j2

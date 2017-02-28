@@ -1,0 +1,43 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    user:
+                        password: $2y$13$Q2QXsPIZXxXe95KrskGbZ.PrI3P9yxaSzwO8Mw2h4wVujhlCwMFKK
+                        roles: ['ROLE_USER']
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern:   ^/login
+            host: "%api_host_regexp%"
+            stateless: true
+            anonymous: true
+            form_login:
+                check_path:               /login_check
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
+
+        api:
+            pattern: ^/.*
+            host: "%api_host_regexp%"
+            stateless: true
+            lexik_jwt: ~
+            anonymous: true
+
+        main:
+            anonymous: ~
+
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY, host: "%api_host_regexp%" }
+        - { path: ^/videos, roles: IS_AUTHENTICATED_ANONYMOUSLY, host: "%api_host_regexp%" }
+        - { path: ^/.*, roles: IS_AUTHENTICATED_FULLY, host: "%api_host_regexp%" }

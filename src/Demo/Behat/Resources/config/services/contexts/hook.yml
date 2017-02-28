@@ -1,0 +1,15 @@
+services:
+    demo.behat.context.hook.api:
+        class: Demo\Behat\Context\Hook\ApiContext
+        arguments:
+            - "@__symfony__.router"
+            - "%__symfony__.api_host%"
+        tags:
+            - { name: "fob.context_service" }
+
+    demo.behat.context.hook.doctrine_orm:
+        class: Demo\Behat\Context\Hook\DoctrineORMContext
+        arguments:
+            - "@__symfony__.doctrine"
+        tags:
+            - { name: "fob.context_service" }

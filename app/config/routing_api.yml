@@ -1,0 +1,6 @@
+demo_api:
+    type: rest
+    resource: "@DemoApiBundle/Resources/config/routing.yml"
+
+api_login_check:
+    path: /login_check

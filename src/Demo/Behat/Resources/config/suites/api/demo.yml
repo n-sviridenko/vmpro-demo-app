@@ -1,0 +1,15 @@
+default:
+    suites:
+        demo:
+            contexts_services:
+                - demo.behat.context.domain.api
+                - demo.behat.context.domain.json
+
+                - demo.behat.context.hook.api
+                - demo.behat.context.hook.doctrine_orm
+
+                - demo.behat.context.setup.api
+
+                - demo.behat.context.transform.user
+            filters:
+                tags: "@api && @demo"

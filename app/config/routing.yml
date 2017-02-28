@@ -1,0 +1,4 @@
+routing_api:
+    resource: routing_api.yml
+    prefix: /
+    condition: "request.server.get('HTTP_HOST') === '%api_host%'"

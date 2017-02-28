@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="029e60c8692c083a9d4d261b514e622d3c059bcf" datatype="html">
+        <source>t.page_not_found.title</source>
+        <target>Page not found</target>
+      </trans-unit>
+      <trans-unit id="5bfb60796048e664cb7bfb396f31b703d551173b" datatype="html">
+        <source>t.page_not_found.content</source>
+        <target>You're looking for unexisting page :(</target>
+      </trans-unit>
+      <trans-unit id="cba46fd55d74ee3f6641b46c725e31a80a2f1b32" datatype="html">
+        <source>t.loadable.retry</source>
+        <target>Retry</target>
+      </trans-unit>
+      <trans-unit id="2010ba31d5affd38af05140bef179933c664cd4d" datatype="html">
+        <source>t.loadable.undefined_error</source>
+        <target>Undefined error</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

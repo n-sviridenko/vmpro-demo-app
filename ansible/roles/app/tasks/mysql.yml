@@ -1,0 +1,28 @@
+---
+
+- debug: var=db_reset|bool
+
+- name: Ensure that the database is present
+  become_user: root
+  mysql_db:
+    name: demo
+    state: present
+
+- name: Restart mysql so it can take app.cnf conf before loading the DB
+  become_user: root
+  service:
+    name: mysql
+    state: restarted
+
+- name: Check if database dump exists
+  become_user: root
+  stat: path=/srv/app/database/demo-app.sql.gz
+  register: db
+
+- name: Import database dump
+  become_user: root
+  mysql_db:
+    state: import
+    name: demo
+    target: /srv/app/database/demo-app.sql.gz
+  when: db_reset|bool == true and db.stat.exists == true

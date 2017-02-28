@@ -1,0 +1,8 @@
+---
+
+- include: packages.yml
+- include: nginx.yml
+- include: mysql.yml
+- include: symfony.yml
+- include: backend.yml
+- include: frontend.yml

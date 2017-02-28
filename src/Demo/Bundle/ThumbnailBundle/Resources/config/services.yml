@@ -1,0 +1,12 @@
+services:
+    demo.thumbnail.http.adapter:
+        class: Http\Adapter\Guzzle6\Client
+
+    demo.thumbnail.generator.thumbnail:
+        class: Demo\Bundle\ThumbnailBundle\Generator\ThumbnailGenerator
+        arguments:
+            - "@vmpro_api.client"
+            - "@demo.thumbnail.http.adapter"
+            - "%vmpro_vm_id%"
+            - "uploads/"
+            - "%kernel.root_dir%/../web/"

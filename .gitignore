@@ -1,0 +1,46 @@
+# development / deployment
+
+/ansible/*.retry
+/ansible/roles/*
+!/ansible/roles/app
+/.vagrant/
+
+# server
+
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!/var/jwt
+!var/SymfonyRequirements.php
+
+/vendor/
+/web/bundles/
+/web/uploads/*
+!web/uploads/.gitkeep
+
+/build/
+
+/database/
+/app/config/parameters.yml
+/app/config/parameters_dev.yml
+/app/config/parameters_prod.yml
+
+# client
+
+/node_modules
+npm-debug.log
+
+/client/out-tsc/
+
+/coverage/
+phantomjsdriver.log
+
+/web/client/*
+!web/client/.gitkeep

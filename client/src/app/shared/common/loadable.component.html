@@ -1,0 +1,32 @@
+<div>
+
+  <template [ngIf]="!loading && !error">
+    <ng-content></ng-content>
+  </template>
+
+  <template [ngIf]="loading || error">
+    <div class="text-center">
+
+      <template [ngIf]="!error && loading">
+        <i class="fa fa-spin fa-spinner"></i>
+      </template>
+
+      <template [ngIf]="error">
+        <button
+          *ngIf="allowReload"
+          type="button"
+          class="btn btn-link text-danger"
+          i18n-title
+          title="t.loadable.retry"
+          (click)="$event.stopPropagation(); doReload()"
+        >
+          <i class="fa fa-refresh"></i>
+        </button>
+
+        <span class="text-danger" i18n>t.loadable.undefined_error</span>
+      </template>
+
+    </div>
+  </template>
+
+</div>

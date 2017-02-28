@@ -1,0 +1,34 @@
+---
+
+- name: Composer install
+  composer: command=install no_dev=no working_dir={{ version_dir }}
+
+- name: Ensure config directory exists
+  file: state=directory path={{ version_dir }}/app/config
+
+- name: Apply common configuration
+  command: >
+    cp app/config/parameters.yml.dist app/config/parameters.yml
+    creates=app/config/parameters.yml
+    chdir={{ version_dir }}
+
+- name: Apply dev configuration
+  command: >
+    cp app/config/parameters_dev.yml.dist app/config/parameters_dev.yml
+    creates=app/config/parameters_dev.yml
+    chdir={{ version_dir }}
+
+- name: Apply prod configuration
+  command: >
+    cp app/config/parameters_prod.yml.dist app/config/parameters_prod.yml
+    creates=app/config/parameters_prod.yml
+    chdir={{ version_dir }}
+
+- name: Install assets
+  command: php bin/console assets:install web --symlink chdir={{ version_dir }}
+
+- name: Migrate database once
+  command: php bin/console doctrine:migrations:migrate --no-interaction chdir={{ version_dir }}
+
+- name: Warmup cache
+  command: php bin/console cache:warmup chdir={{ version_dir }}

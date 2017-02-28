@@ -1,0 +1,16 @@
+default:
+    formatters:
+        progress: true
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                env: test
+                path: AppKernel.php
+                class: AppKernel
+                bootstrap: app/autoload.php
+
+        FriendsOfBehat\ContextServiceExtension:
+            imports:
+               - "src/Demo/Behat/Resources/config/services.yml"
+
+        FriendsOfBehat\CrossContainerExtension: ~

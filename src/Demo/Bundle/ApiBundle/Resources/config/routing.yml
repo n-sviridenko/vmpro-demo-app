@@ -1,0 +1,4 @@
+video:
+    type:        rest
+    resource:    Demo\Bundle\ApiBundle\Controller\VideoController
+    name_prefix: api_

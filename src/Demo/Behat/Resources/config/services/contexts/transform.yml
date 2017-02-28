@@ -1,0 +1,7 @@
+services:
+    demo.behat.context.transform.user:
+        class: Demo\Behat\Context\Transform\UserContext
+        arguments:
+            - "@__symfony__.security.user.provider.concrete.in_memory"
+        tags:
+            - { name: "fob.context_service" }

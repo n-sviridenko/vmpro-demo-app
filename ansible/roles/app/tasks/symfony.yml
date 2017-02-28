@@ -1,0 +1,23 @@
+---
+
+- name: Symfony cache
+  file: >
+    path=/var/cache/symfony
+    state=directory
+  become_user: root
+
+- name: Symfony logs
+  file: >
+    path=/var/logs/symfony
+    state=directory
+  become_user: root
+
+- name: Symfony acl
+  shell: >
+    setfacl -R -m u:www-data:rwX -m u:app:rwX /var/cache/symfony /var/logs/symfony
+  become_user: root
+
+- name: Symfony default acl
+  shell: >
+    setfacl -dR -m u:www-data:rwX -m u:app:rwX /var/cache/symfony /var/logs/symfony
+  become_user: root

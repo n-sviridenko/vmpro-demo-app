@@ -1,0 +1,7 @@
+---
+
+- name: Install yarn dependencies
+  command: yarn install chdir={{ version_dir }}
+
+- name: Build client
+  command: yarn run build:{{ env }} chdir={{ version_dir }}
