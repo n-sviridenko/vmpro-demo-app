@@ -1,6 +1,7 @@
 ---
 
 - name: Install packages
+  become_user: root
   apt:
     pkg: "{{ item }}"
     state: latest

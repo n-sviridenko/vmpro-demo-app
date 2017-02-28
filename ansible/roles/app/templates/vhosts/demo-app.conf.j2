@@ -2,7 +2,7 @@
 
 server {
     listen 80;
-    server_name api.demo-app.dev demo-app.dev;
+    server_name api.demo-app.dev uploads.demo-app.dev;
     root /srv/app/web;
 
     location / {
@@ -27,6 +27,28 @@ server {
         fastcgi_temp_file_write_size 256k;
         fastcgi_read_timeout 120s;
         fastcgi_max_temp_file_size 0;
+    }
+
+    access_log /var/log/nginx/demo-app.access.log main;
+    error_log /var/log/nginx/demo-app.error.log;
+}
+
+server {
+    listen 80;
+    server_name demo-app.dev;
+    root /srv/app/web/client;
+
+    location / {
+        sendfile off;
+        expires -1;
+        add_header Pragma "no-cache";
+        add_header Cache-Control "no-store, no-cache, must-revalidate, post-check=0, pre-check=0";
+        try_files $uri /index.html =404;
+    }
+
+    # @todo: redirect to the /index.html
+    location ~ ^/.+\.php {
+        deny all;
     }
 
     access_log /var/log/nginx/demo-app.access.log main;

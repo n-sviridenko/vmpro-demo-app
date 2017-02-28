@@ -5,3 +5,4 @@ parameters:
     app_host: demo-app.dev
     api_host: api.demo-app.dev
     api_host_regexp: ^api\.demo-app\.dev$
+    uploads_host: uploads.demo-app.dev

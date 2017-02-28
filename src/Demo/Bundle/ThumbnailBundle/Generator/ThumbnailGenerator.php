@@ -108,7 +108,10 @@ class ThumbnailGenerator
         $urls = $this->client->getVideoDownloadUrls($this->videoManagerId, $videoId);
 
         foreach ($urls as $url) {
-            if ($url->getQuality() === $quality && $this->getExtensionByUrl($url->getUrl()) === $extension) {
+            if ($url->getQuality() === $quality &&
+                !is_null($url->getUrl()) &&
+                $this->getExtensionByUrl($url->getUrl()) === $extension
+            ) {
                 return $url->getUrl();
             }
         }

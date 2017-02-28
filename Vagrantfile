@@ -5,7 +5,7 @@ app = {
   :name        => 'demo-app',
   :box         => 'manala/app-dev-debian',
   :box_version => '~> 3.0.0',
-  :aliases     => ['api.demo-app.dev'],
+  :aliases     => ['api.demo-app.dev', 'uploads.demo-app.dev'],
   :box_memory  => 4096
 }
 

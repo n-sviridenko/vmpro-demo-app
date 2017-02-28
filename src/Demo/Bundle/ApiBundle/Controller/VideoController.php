@@ -46,7 +46,7 @@ class VideoController extends FOSRestController
             $view = $this->view($form, Response::HTTP_BAD_REQUEST);
         } else {
             $thumbnailPath = $this->get('demo.thumbnail.generator.thumbnail')->generateThumbnail($params);
-            $thumbnailUrl  = 'http://'.$this->getParameter('app_host').'/'.$thumbnailPath;
+            $thumbnailUrl  = 'http://'.$this->getParameter('uploads_host').'/'.$thumbnailPath;
 
             $view = $this->view(['url' => $thumbnailUrl]);
         }
