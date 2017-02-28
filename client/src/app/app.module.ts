@@ -1,3 +1,5 @@
+import { AlertModule } from 'ng2-bootstrap/alert';
+import { ModalModule } from 'ng2-bootstrap/modal';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -10,10 +12,12 @@ import { config } from 'config';
 import { SharedModule } from './shared';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
-import { AppState, APP_CONFIG, AppStateType } from 'app/core';
+import { AppState, ApiService, VideoService, APP_CONFIG, AppStateType } from 'app/core';
 
 const core = [
   AppState,
+  ApiService,
+  VideoService,
   { provide: APP_CONFIG, useValue: config },
 ];
 
@@ -27,6 +31,8 @@ type StoreType = {
   imports: [
     // vendors
     BrowserModule,
+    AlertModule.forRoot(),
+    ModalModule.forRoot(),
     // app
     routing,
     SharedModule,

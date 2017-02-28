@@ -7,13 +7,10 @@ export abstract class AbstractLoadable<T> {
 
   public loading: boolean = false;
 
-  public loaded: boolean = false;
-
   public load() {
     this.beforeLoad();
 
     this.error = null;
-    this.loaded = false;
     this.loading = true;
 
     Observable.of(null)
@@ -24,7 +21,6 @@ export abstract class AbstractLoadable<T> {
       .subscribe(
         (data: T) => {
           this.data = data;
-          this.loaded = true;
 
           this.onLoad(data);
         },

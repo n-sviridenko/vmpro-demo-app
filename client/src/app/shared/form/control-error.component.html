@@ -1,0 +1,10 @@
+<div class="text-danger" *ngIf="errors.length">
+  <div *ngFor="let error of errors">
+    <template [ngIf]="error.name === 'custom'">
+      {{error.parameters}}
+    </template>
+    <template [ngIf]="error.name !== 'custom'">
+      {{error.name}}: {{error.parameters | json}}
+    </template>
+  </div>
+</div>

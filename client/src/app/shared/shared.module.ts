@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'angular2-moment';
+import { AlertModule } from 'ng2-bootstrap/alert';
+import { ModalModule } from 'ng2-bootstrap/modal';
 
 import { LoadableComponent } from './common';
 import { PageNotFoundComponent } from './page';
 import { LayoutComponent, HeaderComponent } from './layout';
+import { ControlErrorComponent, ControlWrapperDirective, TimepickerComponent } from './form';
 
 const bootstrap = [
   // angular
@@ -16,6 +19,8 @@ const bootstrap = [
   RouterModule,
   HttpModule,
   // etc
+  AlertModule,
+  ModalModule,
   MomentModule,
 ];
 
@@ -27,6 +32,10 @@ const components = [
   LayoutComponent,
   // page
   PageNotFoundComponent,
+  // form
+  TimepickerComponent,
+  ControlErrorComponent,
+  ControlWrapperDirective,
 ];
 
 @NgModule({

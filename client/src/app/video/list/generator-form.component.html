@@ -1,0 +1,57 @@
+<form (ngSubmit)="doFormSubmit()" #form="ngForm">
+
+  <div class="form-group" [dControlWrapper]="time">
+    <label for="generatorTime" i18n>t.video.list_generator_form.time</label>
+    <div>
+      <c-timepicker
+        name="time"
+        inputId="generatorTime"
+        [(ngModel)]="model.time"
+        #time="ngModel"
+      ></c-timepicker>
+    </div>
+    <c-control-error [control]="time"></c-control-error>
+  </div>
+
+  <div class="form-group" [dControlWrapper]="quality">
+    <label for="generatorQuality" i18n>t.video.list_generator_form.quality</label>
+    <div>
+      <select
+        name="quality"
+        id="generatorQuality"
+        class="form-control"
+        [(ngModel)]="model.quality"
+        #quality="ngModel"
+      >
+        <option *ngFor="let item of qualities" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <c-control-error [control]="quality"></c-control-error>
+  </div>
+
+  <div class="form-group" [dControlWrapper]="extension">
+    <label for="generatorExtension" i18n>t.video.list_generator_form.extension</label>
+    <div>
+      <select
+        name="extension"
+        id="generatorExtension"
+        class="form-control"
+        [(ngModel)]="model.extension"
+        #extension="ngModel"
+      >
+        <option *ngFor="let item of extensions" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <c-control-error [control]="extension"></c-control-error>
+  </div>
+
+  <div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="disabled || !form.form.valid"
+      i18n
+    >t.video.list_generator_form.submit</button>
+  </div>
+
+</form>

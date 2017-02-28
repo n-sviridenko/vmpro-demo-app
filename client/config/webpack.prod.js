@@ -167,6 +167,8 @@ module.exports = webpackMerge(commonConfig, {
         NODE_ENV: JSON.stringify(METADATA.ENV),
         HMR: METADATA.HMR,
       },
+
+      API_BASE_URL: JSON.stringify('http://api.demo-app.prod'),
     }),
 
     /**

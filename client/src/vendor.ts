@@ -10,6 +10,10 @@ import '@angularclass/hmr';
 
 import 'rxjs';
 import 'lodash';
+import 'moment';
+import 'angular2-moment';
+import 'ng2-bootstrap/alert';
+import 'ng2-bootstrap/modal';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';

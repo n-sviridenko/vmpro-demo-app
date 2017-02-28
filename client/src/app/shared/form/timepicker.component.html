@@ -1,0 +1,19 @@
+<div class="form-inline">
+
+  <select [attr.id]="inputId" class="form-control" [(ngModel)]="hour">
+    <option *ngFor="let i of hours" [value]="i">{{i < 10 ? '0' + i : i}}</option>
+  </select>
+
+  <span>:</span>
+
+  <select class="form-control" [(ngModel)]="minute">
+    <option *ngFor="let i of minutes" [value]="i">{{i < 10 ? '0' + i : i}}</option>
+  </select>
+
+  <span>:</span>
+
+  <select class="form-control" [(ngModel)]="second">
+    <option *ngFor="let i of seconds" [value]="i">{{i < 10 ? '0' + i : i}}</option>
+  </select>
+
+</div>

@@ -263,6 +263,8 @@ module.exports = {
         NODE_ENV: JSON.stringify(ENV),
         HMR: false,
       },
+
+      API_BASE_URL: JSON.stringify('http://api.demo-app.dev/app_dev.php'),
     }),
 
   ],

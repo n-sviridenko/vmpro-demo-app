@@ -1,0 +1,22 @@
+<alert
+  *ngIf="errorMessage"
+  type="danger"
+  [dismissible]="true"
+>{{errorMessage}}</alert>
+
+<alert
+  *ngIf="data"
+  type="info"
+  [dismissible]="true"
+>
+  <a target="_blank" [href]="data.url" i18n>t.video.list_generator.download_thumbnail</a>
+</alert>
+
+<c-video-list-generator-form
+  [model]="message"
+  [qualities]="qualities"
+  [extensions]="extensions"
+  [disabled]="loading"
+  [errors]="error"
+  (formSubmit)="load()"
+></c-video-list-generator-form>

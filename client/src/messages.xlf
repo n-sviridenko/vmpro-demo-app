@@ -18,6 +18,42 @@
         <source>t.loadable.undefined_error</source>
         <target>Undefined error</target>
       </trans-unit>
+      <trans-unit id="d45b72fb5946772c61054bcc15d8b601fd55484e" datatype="html">
+        <source>t.header.menu.videos</source>
+        <target>Videos</target>
+      </trans-unit>
+      <trans-unit id="e539be3a7d500d2e9719480c6ff6a7aa1d0ea274" datatype="html">
+        <source>t.video.list_item.generate</source>
+        <target>Get thumbnail</target>
+      </trans-unit>
+      <trans-unit id="e286af7e357f301c45e74e20aee58a39102532d5" datatype="html">
+        <source>t.video.list.generator_header</source>
+        <target>Download thumbnail</target>
+      </trans-unit>
+      <trans-unit id="0c956091ce0fd5fd1deaed02e4125043510a5829" datatype="html">
+        <source>t.common.close</source>
+        <target>Close</target>
+      </trans-unit>
+      <trans-unit id="646caf7d4eb0418f01f5ded6c837ea259fda41c6" datatype="html">
+        <source>t.video.list.generator_header</source>
+        <target>Thumbnail generator</target>
+      </trans-unit>
+      <trans-unit id="4170f817c781e6dcd1f3ade5398a7b6983ad7079" datatype="html">
+        <source>t.video.list_generator_form.time</source>
+        <target>Time</target>
+      </trans-unit>
+      <trans-unit id="3d59f01ef55a5409b11f6e588495addadf5e5414" datatype="html">
+        <source>t.video.list_generator_form.quality</source>
+        <target>Quality</target>
+      </trans-unit>
+      <trans-unit id="741437ab192ebfc411c04101b65a7bf80bd31e45" datatype="html">
+        <source>t.video.list_generator_form.extension</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="348d4a083db01063f91cf8688c892a6ce19a7e8d" datatype="html">
+        <source>t.video.list_generator_form.submit</source>
+        <target>Generate</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

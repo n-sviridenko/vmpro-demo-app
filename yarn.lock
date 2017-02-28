@@ -6,7 +6,7 @@
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.8.tgz#e45a77a9d852c8e7135053ff38cf805435458c48"
 
-"@angular/compiler-cli@^2.4.0":
+"@angular/compiler-cli@^2.4.3":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-2.4.8.tgz#6dad3b467243166bf2515d21993d2d1a4700a161"
   dependencies:
@@ -38,7 +38,7 @@
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.8.tgz#686bc82d9188e354181699640777237ed79122ed"
 
-"@angular/platform-server@^2.4.0":
+"@angular/platform-server@^2.4.3":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-2.4.8.tgz#6ccf9550f11137286007c7ff01d4b449c421acbe"
   dependencies:
@@ -356,7 +356,7 @@ autoprefixer@^6.3.1:
     postcss "^5.2.15"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@^3.0.0-beta.18:
+awesome-typescript-loader@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-3.0.8.tgz#1cd13f3cfd7c0a23c7226c629b1a3b818b9e4bb1"
   dependencies:
@@ -3087,7 +3087,7 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-moment@^2.14.1, moment@^2.16.0:
+moment@2.17.1, moment@^2.14.1, moment@^2.16.0:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
@@ -3118,6 +3118,12 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+ng2-bootstrap@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/ng2-bootstrap/-/ng2-bootstrap-1.3.1.tgz#001442b850f980c84311421590834340a9071ba0"
+  dependencies:
+    moment "2.17.1"
 
 no-case@^2.2.0:
   version "2.3.1"
